@@ -1,5 +1,17 @@
 1. Follow Shade
+  1.1 Sense Shade
+  1.2 Move
+    1.2.1 Path Find
+    1.2.2 Move/Stop
 2. "Self Destruct"
+  2.1 When
+  2.2 How
+    2.2.1 Have signature
+      2.2.1.1 Stay camo when not in self-destruct
+    2.2.2 Turn off signature
+    2.2.3 Stop recieving signal
+      2.2.3.1 Stop recieving Signal
+      2.2.3.2 Recieve Confirmation
 3. Weight
 4. Transmit Audio Data
 5. Budget (<£100)
