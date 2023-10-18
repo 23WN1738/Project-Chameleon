@@ -2,7 +2,7 @@
   1.1 Follow shade
     1.1.1 Sense Shade 
       1.1.1.1 Detect edge of shade 
-      1.1.1.2 Detect difference between shade edges and ledges 
+      1.1.1.2 Detect difference between shade edges and ledges, water, other obstacles
     1.1.2 Sense which shadow is its own
       1.1.2.1 Don't follow its own shadow 
     1.1.2 Move
