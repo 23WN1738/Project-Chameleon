@@ -1,8 +1,18 @@
-1. Follow Shade
-  1.1 Sense Shade
-  1.2 Move
-    1.2.1 Path Find
-    1.2.2 Move/Stop
+1. Movement 
+  1.1 Follow shade
+    1.1.1 Sense Shade 
+      1.1.1.1 Detect edge of shade 
+      1.1.1.2 Detect difference between shade edges and ledges 
+    1.1.2 Sense which shadow is its own
+      1.1.2.1 Don't follow its own shadow 
+    1.1.2 Move
+      1.1.2.1 Path Find
+      1.1.2.2 Move/Stop
+  1.2 Avoid hazards 
+    1.2.1 Sense ledges and objects
+    1.2.2 Avoid ledges and objects 
+    1.2.3 Pathfind around ledges and objects.
+    1.2.4 Move 
 2. "Self Destruct"
   2.1 When
     2.1.1 In light for too long
