@@ -1,0 +1,26 @@
+objectives
+  research sensors 
+    LDRs - have mjultiple LDRs or move an LDR - position of LDRs- higher=further but less accurate- have LDR on arm? - put LDR at the front 
+
+    Infrared
+    Ultrasonic 
+    
+  how to move 
+    tank tread research / pros cons of other options 
+      Pros tank: simple (Less likely to break), easy to program 
+      Cons: slow, expensive, loud
+    how wide apart would tracks be 
+  motor power 
+      how to configure motors
+      where to put components - space to put 100g of weight 
+      1 motors, 1 gearbox or just 2 motors - gearbox- more torque less speed, gearbox unnecessary? - something to distribute power from motor - adjust speed by adjusting power
+      does speed need to change- try to move at speed of shade - 
+      probably use 2 motors - one per wheel or tread - 
+  Power off process
+    Battery and Arduino 
+      Transistor 
+    How to bring it back 
+      Standby? (secondary supply in smaller battery and small circuit board)
+
+  How to hold weight 
+    
