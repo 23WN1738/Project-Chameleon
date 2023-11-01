@@ -1,6 +1,6 @@
 objectives
   research sensors 
-    LDRs - have mjultiple LDRs or move an LDR - position of LDRs- higher=further but less accurate- have LDR on arm? - put LDR at the front 
+    LDRs - have multiple LDRs or move an LDR - position of LDRs- higher=further but less accurate- have LDR on arm? - put LDR at the front 
 
     Infrared
     Ultrasonic 
@@ -10,6 +10,7 @@ objectives
       Pros tank: simple (Less likely to break), easy to program 
       Cons: slow, expensive, loud
     how wide apart would tracks be 
+   bump sensor underneath (much further forward than centre of mass)
   motor power 
       how to configure motors
       where to put components - space to put 100g of weight 
