@@ -16,13 +16,15 @@ objectives
       where to put components - space to put 100g of weight 
       1 motors, 1 gearbox or just 2 motors - gearbox- more torque less speed, gearbox unnecessary? - something to distribute power from motor - adjust speed by adjusting power
       does speed need to change- try to move at speed of shade - 
-      probably use 2 motors - one per wheel or tread - 
+      probably use 2 motors instead of gearbox - one per wheel or tread - 
   Power off process
     Battery and Arduino 
       Transistor 
     How to bring it back 
       Standby? (secondary supply in smaller battery and small circuit board)
 
-  How to hold weight 
-
+  How to hold weight - make it easy to add & remove weight 
+  Choose where components go
+  Choose method of movement
+  Choose sensors 
 Make it conscious 
