@@ -10,6 +10,8 @@ int sensorValue2 = 0;
 int sensorMin2 = 1023;  
 int sensorMax2 = 0; 
 bool direction=1;
+const int pingPin = 7; // Trigger Pin of Ultrasonic Sensor
+const int echoPin = 6; // Echo Pin of Ultrasonic Sensor
 // the setup function runs once when you press reset or power the board
 void setup() {
   // initialize digital pin LED_BUILTIN as an output.
@@ -35,17 +37,34 @@ void setup() {
       sensorMin2 = sensorValue2;
     }
   }
+
   pinMode(0,OUTPUT);
   pinMode(directionPin, OUTPUT);
   pinMode(pwmPin, OUTPUT);
   pinMode(brakePin, OUTPUT);
   pinMode(3, OUTPUT);
+  // add section to find start ultrasonic distance
 }
 
 // the loop function runs over and over again forever
 void loop() {
-  //digitalWrite(7, HIGH);  // turn the LED on (HIGH is the voltage level) 
 
+  long duration, inches, cm;
+  pinMode(pingPin, OUTPUT);
+  digitalWrite(pingPin, LOW);
+  delayMicroseconds(2);
+  digitalWrite(pingPin, HIGH);
+  delayMicroseconds(10);
+  digitalWrite(pingPin, LOW);
+  pinMode(echoPin, INPUT);
+  duration = pulseIn(echoPin, HIGH);
+  cm = microsecondsToCentimeters(duration);
+  Serial.print(cm);
+  Serial.print("cm");
+  if(cm>startcm+2){
+    //move backwards
+    //do less often than ldr checking??
+  }
   sensorValue = analogRead(sensorPin);
   sensorValue2 = analogRead(sensorPin2);
 
@@ -84,10 +103,20 @@ void loop() {
     }
     delay(200);
   }
+
+
+  //digitalWrite(0,HIGH);
   
 
 
   
                     // wait for a second
                     // wait for a second
+}
+long microsecondsToInches(long microseconds) {
+   return microseconds / 74 / 2;
+}
+
+long microsecondsToCentimeters(long microseconds) {
+   return microseconds / 29 / 2;
 }
