@@ -1,0 +1,95 @@
+const int sensorPin = A0;
+const int sensorPin2= A3;
+int directionPin = 13;
+int pwmPin = 11;
+int brakePin = 8;
+int sensorValue = 0;   
+int sensorMin = 1023;  
+int sensorMax = 0;
+int sensorValue2 = 0;   
+int sensorMin2 = 1023;  
+int sensorMax2 = 0; 
+// the setup function runs once when you press reset or power the board
+void setup() {
+  // initialize digital pin LED_BUILTIN as an output.
+  //pinMode(7, OUTPUT);
+  
+  Serial.begin(9600);
+  // calibrate during the first five seconds
+  while (millis() < 10000) {
+    sensorValue = analogRead(sensorPin);
+    sensorValue2 = analogRead(sensorPin2);
+    // record the maximum sensor value
+    if (sensorValue > sensorMax) {
+      sensorMax = sensorValue;
+    }
+    if (sensorValue2 > sensorMax2) {
+      sensorMax2 = sensorValue2;
+    }
+    // record the minimum sensor value
+    if (sensorValue < sensorMin) {
+      sensorMin = sensorValue;
+    }
+    if (sensorValue2 < sensorMin2) {
+      sensorMin2 = sensorValue2;
+    }
+  }
+  pinMode(0,OUTPUT);
+  pinMode(directionPin, OUTPUT);
+  pinMode(pwmPin, OUTPUT);
+  pinMode(brakePin, OUTPUT);
+  pinMode(3, OUTPUT);
+}
+
+// the loop function runs over and over again forever
+void loop() {
+  //digitalWrite(7, HIGH);  // turn the LED on (HIGH is the voltage level)
+  delay(100); 
+
+  sensorValue = analogRead(sensorPin);
+  sensorValue2 = analogRead(sensorPin2);
+
+  // in case the sensor value is outside the range seen during calibration
+  sensorValue = constrain(sensorValue, sensorMin, sensorMax);
+  sensorValue2 = constrain(sensorValue2, sensorMin2, sensorMax2);
+  // apply the calibration to the sensor reading
+  sensorValue = map(sensorValue, sensorMin, sensorMax, 0, 100);
+  sensorValue2 = map(sensorValue2, sensorMin2, sensorMax2, 0, 100)-10;
+  digitalWrite(directionPin, HIGH);
+  digitalWrite(brakePin, LOW);
+  analogWrite(pwmPin, 200);
+  if((sensorValue-sensorValue2)>20 | (sensorValue-sensorValue2)<-20){
+    Serial.print("sensorValue2=");
+    Serial.println(sensorValue2);
+    Serial.print("sensorValue=");
+    Serial.println(sensorValue);
+    if (sensorValue>sensorValue2+10){
+      digitalWrite(directionPin, HIGH);
+      digitalWrite(brakePin, LOW);
+      analogWrite(pwmPin, 200);
+ 
+      delay(2000);
+    }
+    else if (sensorValue2>sensorValue+10){
+      digitalWrite(directionPin, LOW);
+      digitalWrite(brakePin, LOW);
+      analogWrite(pwmPin, 200);
+ 
+      delay(2000);
+    }
+    else{
+      digitalWrite(brakePin, HIGH);
+      analogWrite(pwmPin, 0);
+ 
+      delay(2000);
+    }
+  }
+
+  //digitalWrite(0,HIGH);
+  
+
+
+  
+                    // wait for a second
+                    // wait for a second
+}
