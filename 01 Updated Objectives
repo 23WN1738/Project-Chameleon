@@ -1,8 +1,12 @@
 1 - Movement 
-1.1 - Motors
-1.1.1 - Move forward on command
-1.1.2 - Move backward on command
-1.1.3 - Active one track at a time
-1.1.4 - Motors activate going forwards and backwards resulting in rotation
-2 - Sensors
-2.1
+  1.1 - Motors
+    1.1.1 - Move forward on command
+    1.1.2 - Move backward on command
+    1.1.3 - Active one track at a time
+    1.1.4 - Motors activate going forwards and backwards resulting in rotation
+  1.2 - Sensors
+    1.2.1 - Get the LDRs to have uniform value
+      1.2.1.1 - Have the LDRs infuence the motors
+      1.2.1.2 - Have the LDRs move the motors then they detect light above a sertain value
+    1.2.2 - Get the UltraSonic Sensor to have acurate readings
+      1.2.2.1 - Have the motors stop when the UltraSonic Sensors stop the motors when they detect a value that is too low
